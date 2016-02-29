@@ -1,0 +1,42 @@
+'use strict';
+(function() {
+var apiUrl = 'https://mongoose-kevinvan1990.c9users.io/';
+$(document).ready(function() {
+        var inc = 2;
+        $('#addChoice').click(function() {
+                var i = inc++; 
+                $("#choiceDiv").append(
+                        $('<div>', {
+                                class: 'form-group',
+                                id: 'choiceDiv'+i
+                        }).append(
+                        $('<label>', {
+                                for: 'inpChoice'+ i
+                        }).html('Choice '+ i))
+                                .append(
+                        $('<input>', {
+                                type: 'text',
+                                class: 'form-control',
+                                id: 'inpChoice' + i,
+                        })))
+                var test = document.getElementById('choiceDiv'+i).className;
+                console.log(test);
+        });
+});
+
+var form = document.getElementById('myForm');
+
+form.addEventListener("submit", function(even) {
+	event.preventDefault();
+	var enc = '';
+	var encPairs = [];
+	var data = document.getElementsByTagName('input');
+        for (var i=0; i< data.length;i++) {
+        	encPairs.push(encodeURIComponent(data[i].id) + '=' + encodeURIComponent(data[i].value));
+                console.log(data[i].value);
+        }
+        enc = encPairs.join('&').replace(/%20/g, '+');
+
+	ajaxFunctions.ajaxRequest('POST', apiUrl, enc);
+});
+})();

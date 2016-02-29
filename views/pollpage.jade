@@ -1,0 +1,31 @@
+html
+  head
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+
+    link(href="/public/css/main.css" rel="stylesheet", type="text/css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r", crossorigin="anonymous")
+
+   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")
+  head
+  body
+    div(class="container-fluid")
+    div(class="row")
+    div(class="col-md-1") VotePlex
+    div(class="col-md-1") Home
+    div(class="row")
+    div(class="col-md-12", id="vote-plex-color")
+      h1 VotePlex
+    div(class="cont")
+      div(id="title")= question 
+      -options.forEach(function(option) {
+      div(class="radio")
+        label
+        input(type="radio", name="optionsRadios", id=option.option, value=option.option)
+        = option.option
+        -})
+      button(type="submit" class="btn btn-default" id="voteButton") Submit
+    script(src="/controllers/pollController.client.js")
+    script(src="/common/ajax-functions.js")

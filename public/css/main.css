@@ -1,0 +1,40 @@
+#vote-plex-color{
+  background-color: #669BD0;
+  text-align: center;
+  color: white;
+  height: 25%;
+}
+#footer {
+  position: fixed;
+  bottom: 0px;
+}
+#createUserContainer {
+	display: none;
+}
+.xyAxis {
+  border-style: solid;
+  border-bottom-width: medium;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  width: 400px;
+  height: 300px;
+  margin-left: 10%;
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.barClass {
+  position: absolute;
+  border: 1px;
+  margin: 0 auto;
+}
+#votePlex {
+ font-size: 400%;
+}
+.myCreate {
+ position: relative;
+ top-margin: 0%;
+ top: 100%;
+ display: inline-block;
+}
+
